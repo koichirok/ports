@@ -56,11 +56,11 @@ post-install:
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for x in ${PORTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${x} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${x} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
-	@${MKDIR} -p ${STAGEDIR}${PREFIX}/${APACHEETCDIR}/Includes
-	@${INSTALL_DATA} ${WRKDIR}/pandora_console.conf \
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${APACHEETCDIR}/Includes
+	${INSTALL_DATA} ${WRKDIR}/pandora_console.conf \
 		${STAGEDIR}${PREFIX}/${APACHEETCDIR}/Includes/pandora_console.conf.sample
 	@${LN} -sf ${_LICENSE_DIR}/${LICENSE} ${STAGEDIR}${WWWDIR}/COPYING
 
