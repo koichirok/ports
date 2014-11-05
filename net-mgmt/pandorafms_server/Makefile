@@ -2,7 +2,6 @@
 # $FreeBSD: head/net-mgmt/pandorafms_server/Makefile 365676 2014-08-22 16:55:01Z wg $
 
 PORTNAME=	pandora_server
-
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	koichiro@rworks.jp
@@ -20,9 +19,7 @@ PANDORA_DEPS=	p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
 		p5-XML-Simple>=0:${PORTSDIR}/textproc/p5-XML-Simple \
 		p5-XML-Twig>=0:${PORTSDIR}/textproc/p5-XML-Twig \
 		p5-JSON>=0:${PORTSDIR}/converters/p5-JSON
-
 BUILD_DEPENDS=	${PANDORA_DEPS}
-
 RUN_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
 		p5-DBD-mysql>=4:${PORTSDIR}/databases/p5-DBD-mysql \
 		${LOCALBASE}/bin/wmic:${PORTSDIR}/net-mgmt/wmi-client \
@@ -105,7 +102,7 @@ post-install:
 	@${MV} ${STAGEDIR}${ETCDIR}/pandora_server.conf ${STAGEDIR}${ETCDIR}/pandora_server.conf.sample
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for x in ${PORTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${x} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${x} ${STAGEDIR}${DOCSDIR}
 .endfor
 
 .include <bsd.port.post.mk>
