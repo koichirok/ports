@@ -2,7 +2,6 @@
 # $FreeBSD: head/net-mgmt/pandorafms_server/Makefile 365676 2014-08-22 16:55:01Z wg $
 
 PORTNAME=	pandora_server
-PORTREVISION=	1
 
 CATEGORIES=	net-mgmt
 
@@ -29,6 +28,7 @@ RUN_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
 		${LOCALBASE}/bin/wmic:${PORTSDIR}/net-mgmt/wmi-client \
 		${LOCALBASE}/bin/nmap:${PORTSDIR}/security/nmap \
 		p5-Storable>=0:${PORTSDIR}/devel/p5-Storable \
+		p5-Encode-Locale>=0:${PORTSDIR}/converters/p5-Encode-Locale \
 		${PANDORA_DEPS}
 
 OPTIONS_DEFINE=	DOCS TENTACLE XPROBE PGSQL ORACLE EXTRAS

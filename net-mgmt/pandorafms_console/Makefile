@@ -50,7 +50,8 @@ post-install:
 		&& ${RM} -rf pandora_console_install* *.spec \
 			extras/check_other_languages.sh.bak \
 			include/languages/extract_newlines.sh.bak \
-			*.sql.bak COPYING ${PORTDOCS} DEBIAN/
+			*.sql.bak COPYING ${PORTDOCS} DEBIAN/ \
+			attachment/collections/.empty attachment/downloads/.gitignore
 	@cd ${STAGEDIR}${WWWDIR} && ${MV} install.php install.done
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
