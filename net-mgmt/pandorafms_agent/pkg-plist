@@ -27,11 +27,9 @@ man/man1/pandora_agent.1.gz
 %%DATADIR%%/plugins/who.sh
 @owner pandora
 @mode 700
-@dirrmtry %%DATADIR%%/collections
-@dirrmtry %%DATADIR%%/plugins
+@dir %%DATADIR%%/collections
+@dir %%DATADIR%%/plugins
 @owner
 @mode
-@dirrmtry %%DATADIR%%
 %%ETCDIR%%/plugins
 %%ETCDIR%%/collections
-@dirrmtry %%ETCDIR%%
