@@ -94,6 +94,7 @@ post-patch:
 
 post-install:
 	@${RM} -f ${STAGEDIR}${PREFIX}/lib/perl5/${PERL_VER}/${PERL_ARCH}/perllocal.pod
+	@${RMDIR} ${STAGEDIR}${PREFIX}/lib/perl5/${PERL_VER}/${PERL_ARCH}
 	@${FIND} ${STAGEDIR}${DATADIR} -type l -name PandoraFMS -delete
 .for x in pandora_server tentacle_server
 	@cd ${STAGEDIR}${PREFIX}/etc/rc.d && test -f ${x} \
