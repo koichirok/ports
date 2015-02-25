@@ -1,5 +1,5 @@
 # Created by: KIKUCHI Koichiro <koichiro@rworks.jp>
-# $FreeBSD: head/net-mgmt/pandorafms_agent/Makefile 365508 2014-08-20 20:01:17Z wg $
+# $FreeBSD: head/net-mgmt/pandorafms_agent/Makefile 374927 2014-12-18 22:41:58Z pawel $
 
 PORTNAME=	pandora_agent
 CATEGORIES=	net-mgmt

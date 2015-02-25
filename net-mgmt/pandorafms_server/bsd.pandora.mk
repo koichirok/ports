@@ -1,4 +1,4 @@
-# $FreeBSD: head/net-mgmt/pandorafms_server/bsd.pandora.mk 365508 2014-08-20 20:01:17Z wg $
+# $FreeBSD: head/net-mgmt/pandorafms_server/bsd.pandora.mk 374927 2014-12-18 22:41:58Z pawel $
 
 PANDORA_VERSION=	5.1SP1
 PANDORA_LICENSE=	GPLv2

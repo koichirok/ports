@@ -1,5 +1,5 @@
 # Created by: KIKUCHI Koichiro <koichiro@rworks.jp>
-# $FreeBSD: head/net-mgmt/pandorafms_server/Makefile 373448 2014-11-26 13:08:24Z mat $
+# $FreeBSD: head/net-mgmt/pandorafms_server/Makefile 374927 2014-12-18 22:41:58Z pawel $
 
 PORTNAME=	pandora_server
 CATEGORIES=	net-mgmt
