@@ -1,5 +1,5 @@
 --- GNUmakefile.orig	2011-12-23 22:58:36.000000000 +0900
-+++ GNUmakefile	2015-03-28 03:05:50.403829019 +0900
++++ GNUmakefile	2015-03-28 03:34:04.234178138 +0900
 @@ -36,7 +36,7 @@ endif
  # Install dir for libasync_wmi_lib.so.* and pysamba wrapper code.
  # e.g., Samba/source/bin/shared/libasync_wmi_lib.so.0.0.1 --> $(PY_LIBDIR)
@@ -27,7 +27,7 @@
  	@echo
  	@echo "Checking prequisites for installing WMI"
  	$(call check,directory,$(ZENHOME),"ZENHOME")
-@@ -158,23 +158,23 @@ endif
+@@ -158,27 +158,27 @@ endif
  $(SAMBA_SRCDIR)/Makefile: $(SAMBA_SRCDIR)/autogen.sh
  	cd $(SAMBA_SRCDIR) ;\
  	./autogen.sh ;\
@@ -52,8 +52,12 @@
 +	$(INSTALL_PROGRAM) $(SAMBA_SRCDIR)/bin/winexe $(DESTDIR)$(ZENOSS_BINDIR)
  ifeq ($(shell uname), Darwin)
  	-(cd $(DESTDIR)$(PY_LIBDIR) && rm -f $(LIBASYNC_WMI_LIB_BASENAME)*)
--	cp $(PATHED_LIBASYNC_WMI_LIB) $(DESTDIR)$(PY_LIBDIR)/$(LIBASYNC_WMI_LIB_BASENAME).$(LIBASYNC_WMI_LIB_VERSION_nnn).dylib
-+	$(INSTALL_LIB) $(PATHED_LIBASYNC_WMI_LIB) $(DESTDIR)$(PY_LIBDIR)/$(LIBASYNC_WMI_LIB_BASENAME).$(LIBASYNC_WMI_LIB_VERSION_nnn).dylib
+ 	cp $(PATHED_LIBASYNC_WMI_LIB) $(DESTDIR)$(PY_LIBDIR)/$(LIBASYNC_WMI_LIB_BASENAME).$(LIBASYNC_WMI_LIB_VERSION_nnn).dylib
  	(cd $(DESTDIR)$(PY_LIBDIR) && ln -sf $(LIBASYNC_WMI_LIB_BASENAME).$(LIBASYNC_WMI_LIB_VERSION_nnn).dylib $(LIBASYNC_WMI_LIB_BASENAME).dylib)
  else
  	-(cd $(DESTDIR)$(PY_LIBDIR) && rm -f $(LIBASYNC_WMI_LIB_BASENAME)*)
+-	cp $(PATHED_LIBASYNC_WMI_LIB) $(DESTDIR)$(PY_LIBDIR)
++	$(INSTALL_LIB) $(PATHED_LIBASYNC_WMI_LIB) $(DESTDIR)$(PY_LIBDIR)
+ 	(cd $(DESTDIR)$(PY_LIBDIR) && ln -sf $(LIBASYNC_WMI_LIB) $(LIBASYNC_WMI_LIB_SO_N))
+ endif
+ 	rm -rf $(DESTDIR)$(PY_LIBDIR)/pysamba
