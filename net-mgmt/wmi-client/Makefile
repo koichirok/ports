@@ -1,5 +1,5 @@
 # Created by: KIKUCHI Koichiro <koichiro@rworks.jp>
-# $FreeBSD: head/net-mgmt/wmi-client/Makefile 365756 2014-08-23 16:38:43Z adamw $
+# $FreeBSD: head/net-mgmt/wmi-client/Makefile 385233 2015-05-03 07:30:18Z jbeich $
 
 PORTNAME=	wmi
 PORTVERSION=	1.3.16
@@ -20,7 +20,8 @@ USE_AUTOTOOLS=	autoconf:env autoheader:env
 USES=		iconv gmake tar:bzip2
 
 MAKEFILE=	GNUmakefile
-MAKE_ARGS+=	ZENHOME="${PREFIX}" INSTALL_PROGRAM="${INSTALL_PROGRAM}" INSTALL_LIB="${INSTALL_LIB}"
+MAKE_ARGS+=	ZENHOME="${PREFIX}" INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
+		INSTALL_LIB="${INSTALL_LIB}"
 ALL_TARGET=	build
 
 PROGS=	bin/wmic bin/winexe

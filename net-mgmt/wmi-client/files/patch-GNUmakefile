@@ -1,5 +1,5 @@
---- GNUmakefile.orig	2011-12-23 22:58:36.000000000 +0900
-+++ GNUmakefile	2015-03-28 03:34:04.234178138 +0900
+--- GNUmakefile.orig	2011-12-23 13:58:36 UTC
++++ GNUmakefile
 @@ -36,7 +36,7 @@ endif
  # Install dir for libasync_wmi_lib.so.* and pysamba wrapper code.
  # e.g., Samba/source/bin/shared/libasync_wmi_lib.so.0.0.1 --> $(PY_LIBDIR)
