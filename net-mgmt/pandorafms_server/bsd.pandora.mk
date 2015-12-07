@@ -1,4 +1,4 @@
-# $FreeBSD$
+# $FreeBSD: head/net-mgmt/pandorafms_server/bsd.pandora.mk 402346 2015-11-24 06:13:51Z pi $
 
 PANDORA_VERSION=	6.0
 PANDORA_LICENSE=	GPLv2
@@ -13,6 +13,8 @@ PANDORA_INSTALLER=	${PORTNAME}_installer
 PANDORA_INSTALLER_ARGS=	--install
 
 PORTVERSION=	${PANDORA_VERSION:C/SP/./}
+# ignore nightly builds (*-YYYYMMDD)
+PORTSCOUT=      limit:!.*-\d{8}$$
 
 MASTER_SITES?=	SF/pandora/Pandora%20FMS%20${PANDORA_VERSION:C/((SP[0-9]*)*)$/\/\1/}Final/Tarball
 .if ${PORTNAME} == "pandora_agent"
