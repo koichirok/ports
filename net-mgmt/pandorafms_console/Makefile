@@ -1,5 +1,5 @@
 # Created by: KIKUCHI Koichiro <koichiro@rworks.jp>
-# $FreeBSD: head/net-mgmt/pandorafms_console/Makefile 402346 2015-11-24 06:13:51Z pi $
+# $FreeBSD: head/net-mgmt/pandorafms_console/Makefile 412348 2016-04-01 14:17:44Z mat $
 
 PORTNAME=	pandora_console
 CATEGORIES=	net-mgmt
@@ -10,7 +10,7 @@ COMMENT=	Pandora FMS console
 LICENSE=	${PANDORA_LICENSE}
 LICENSE_FILE=	${PANDORA_LICENSE_FILE}
 
-RUN_DEPENDS=	${LOCALBASE}/bin/twopi:${PORTSDIR}/graphics/graphviz
+RUN_DEPENDS=	${LOCALBASE}/bin/twopi:graphics/graphviz
 
 USES=		shebangfix
 SHEBANG_FILES=	include/languages/extract_newlines.sh \

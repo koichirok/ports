@@ -1,4 +1,4 @@
-# $FreeBSD: head/net-mgmt/pandorafms_server/bsd.pandora.mk 402346 2015-11-24 06:13:51Z pi $
+# $FreeBSD: head/net-mgmt/pandorafms_server/bsd.pandora.mk 408864 2016-02-14 15:40:46Z junovitch $
 
 PANDORA_VERSION=	6.0SP1
 PANDORA_LICENSE=	GPLv2
@@ -13,6 +13,7 @@ PANDORA_INSTALLER=	${PORTNAME}_installer
 PANDORA_INSTALLER_ARGS=	--install
 
 PORTVERSION=	${PANDORA_VERSION:C/SP/./}
+PORTREVISION=	1
 # ignore nightly builds (*-YYYYMMDD)
 PORTSCOUT=      limit:!.*-\d{8}$$
 
