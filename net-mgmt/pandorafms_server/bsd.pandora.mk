@@ -1,4 +1,4 @@
-# $FreeBSD: head/net-mgmt/pandorafms_server/bsd.pandora.mk 408864 2016-02-14 15:40:46Z junovitch $
+# $FreeBSD$
 
 PANDORA_VERSION=	6.0SP2
 PANDORA_LICENSE=	GPLv2

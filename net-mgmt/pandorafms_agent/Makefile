@@ -1,5 +1,5 @@
 # Created by: KIKUCHI Koichiro <koichiro@rworks.jp>
-# $FreeBSD: head/net-mgmt/pandorafms_agent/Makefile 393246 2015-07-30 14:22:00Z amdmi3 $
+# $FreeBSD$
 
 PORTNAME=	pandora_agent
 CATEGORIES=	net-mgmt
@@ -11,7 +11,7 @@ LICENSE=	${PANDORA_LICENSE}
 LICENSE_FILE=	${PANDORA_LICENSE_FILE}
 
 OPTIONS_DEFINE=		DOCS TENTACLE_SERVER
-OPTIONS_DEFAULT=	DOCS TENTACLE_SERVER
+OPTIONS_DEFAULT=	TENTACLE_SERVER
 TENTACLE_SERVER_DESC=	Install tentalce_server
 
 USES=		perl5 shebangfix
@@ -40,8 +40,8 @@ post-patch:
 	@${REINPLACE_CMD} -e '\|PREFIX=|s|=[^;]*|=${PREFIX}|' ${WRKSRC}/pandora_agent_installer
 
 post-install:
-	@${RM} -f ${STAGEDIR}${LOGDIR}/pandora_agent.log
-	@${RM} -f ${STAGEDIR}${DATADIR}/collections/.empty
+	@${RM} ${STAGEDIR}${LOGDIR}/pandora_agent.log
+	@${RM} ${STAGEDIR}${DATADIR}/collections/.empty
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for x in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${x} ${STAGEDIR}${DOCSDIR}
